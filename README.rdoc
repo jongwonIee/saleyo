@@ -1,0 +1,35 @@
+2016/5/15 성중
+
+    코드 통일 필요, 
+    디비 구축 / 저장기능 / 마이페이지
+    가격알림 제목 정하기
+    
+    
+    
+    
+2016/5/24 할일목록
+
+    1. ruby task scheduler                                         - 성중(미완료)
+    
+    2. 프론트앤드
+        - 메인페이지
+        - 마이페이지                                               - 지혜(미완료)
+        - 디테일페이지(각각, 확인/마이페이지 이동 팝업메시지! )
+        - sign_in(views/devise/sessions/new.html.erb)              - 지혜(미완료)
+        - sign-up(views/devise/registrations/new.html.erb)         - 지혜(미완료)  
+        
+
+        
+    3. 할일적어주세요 - 적고 할거 - 이름 써주세여
+    
+
+
+
+이걸 lib/tasks 폴더내에 새파일.rake 에 넣어주시면 되세요.
+실행하는건 bash 창에 rake check:allprice 입니다.
+
+    
+    어딨어?
+    
+    
+  

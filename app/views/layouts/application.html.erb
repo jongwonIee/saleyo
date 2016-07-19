@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+  <link rel="icon" type="image/ico" href="/img/favicon.png"/>
+  <title>Sale-Yo? 살래요!</title>
+  <meta charset="UTF-8">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    $( document ).ready(function() {
+        console.log( "document loaded" );
+    });
+ 
+    $( window ).load(function() {
+        console.log( "window loaded" );
+    });
+    </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css">
+
+  
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/nivo-lightbox.css" rel="stylesheet" type="text/css"/>
+	<link href="../assets/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/animations.css" rel="stylesheet"  type="text/css" />
+  <link href="../assets/style.css" rel="stylesheet"  type="text/css" >
+	<link href="../color/default.css" rel="stylesheet"  type="text/css" >
+	
+  
+</head>
+<body>
+<%= yield %>
+
+
+<!-- Core JavaScript Files -->
+  <script src="../js/jquery.min.js"></script>	 
+  <script src="../js/jquery.sticky.js"></script>
+  <script src="../js/jquery.easing.min.js"></script>	
+	<script src="../js/jquery.scrollTo.js"></script>
+	<script src="../js/jquery.appear.js"></script>
+	<script src="../js/stellar.js"></script>
+	<script src="../js/nivo-lightbox.min.js"></script>
+    <script src="../js/custom.js"></script>
+	<script src="../js/css3-animate-it.js"></script>
+<script>
+  $(function(){
+      if(window.location.protocol != 'http:') {
+      location.href = location.href.replace("https://", "http://");
+    }});
+    
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#modify_username').focus()
+    });
+</script>
+
+
+</body>
+</html>
