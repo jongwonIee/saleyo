@@ -124,7 +124,7 @@ class HomeController < ApplicationController
       @URL = params[:urladdress]
       html_doc = Nokogiri::HTML(open(@URL))
       @name = html_doc.xpath("//span[@id='ctl00_ContentPlaceHolder1_StyleName']").inner_text.gsub(/\s/, '')
-      @price = html_doc.xpath("//dd[@class='dcPrice']").inner_text.gsub(/\D/, '') #미쏘는 일반상품도 dcPrice로 보여줍니다~ 
+      @price = html_doc.xpath("//dd[@class='pdPrice']").inner_text.gsub(/\D/, '') #수정필요
       @img_src = html_doc.xpath("//img[@class='b_img']/@src").to_s
       @code = "//dd[@class='pdPrice']"
       
