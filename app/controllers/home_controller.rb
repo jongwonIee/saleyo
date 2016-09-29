@@ -137,7 +137,17 @@ class HomeController < ApplicationController
       @price = html_doc.xpath('//span[@id="goods_price"]').inner_text.gsub(/\D/, '')
       @img_src = html_doc.xpath("//img[@id='bigimg']/@src").to_s
       @code = '//span[@id="goods_price"]'
-      
+
+    elsif params[:brand_name] == 'naver'
+      @brand_url = "http://pc.shopping2.naver.com/"
+      @brand = "naver"  
+      @URL = params[:urladdress]
+      html_doc = Nokogiri::HTML(open(@URL))
+      @name = html_doc.xpath('//a[@class="tit"]')[0].inner_text.gsub(/\s/, '')
+      @price = html_doc.xpath('//span[@class="num _price_reload"]')[0].inner_text.gsub(/\D/, '')
+      @img_src = html_doc.xpath("//img[@class='_productLazyImg']/@src")[0].to_s
+      @code = '//span[@class="price"]'
+
     elsif params[:brand_name] == 'oliveyoung'
       @brand_url = "http://www.oliveyoungshop.com/"
       @brand ="oliveyoung"
@@ -158,15 +168,6 @@ class HomeController < ApplicationController
       @img_src = html_doc.xpath('//ul[@class="box"]/li[1]/img/@src').to_s
       @code = '//p[@class="pdd_price"]/span'
       
-    elsif params[:brand_name] == 'imshop'
-      @brand_url = "https://imshop-csy1204.c9users.io/"
-      @brand = "imshop"
-      @URL = params[:urladdress]
-      html_doc = Nokogiri::HTML(open(@URL)) 
-      @name = html_doc.xpath('//h3[@class="name"]').inner_text.gsub(/\s/, '')
-      @price = html_doc.xpath('//p[@class="price"]').inner_text.gsub(/\D/, '')
-      @img_src = html_doc.xpath('//img[@class="img"]/@src').to_s
-      @code = '//p[@class="price"]'
     end
     
   end
